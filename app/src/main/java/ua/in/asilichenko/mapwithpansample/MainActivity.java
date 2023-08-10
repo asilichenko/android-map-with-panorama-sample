@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     log("---------------------- Start -------------------------------");
-    log(getString(R.string.maps_api_key));
+    log("You are using API KEY: " + getString(R.string.maps_api_key));
 
     ((SupportMapFragment) Objects.requireNonNull(getSupportFragmentManager()
         .findFragmentById(R.id.map)))
