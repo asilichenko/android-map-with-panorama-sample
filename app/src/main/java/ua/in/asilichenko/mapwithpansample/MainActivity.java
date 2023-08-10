@@ -1,11 +1,6 @@
 package ua.in.asilichenko.mapwithpansample;
 
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.LocaleList;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -27,7 +22,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.StreetViewPanoramaCamera;
 import com.google.android.gms.maps.model.StreetViewPanoramaLocation;
 
-import java.util.Locale;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
@@ -69,19 +63,6 @@ public class MainActivity extends AppCompatActivity
   private static final float bearing = 115;
   private static final float zoom = 18f;
   //
-
-  @Override
-  protected void attachBaseContext(Context newBase) {
-    final Resources resources = newBase.getResources();
-    final Configuration configuration = resources.getConfiguration();
-
-    final LocaleList localeList = new LocaleList(new Locale("en"));
-    LocaleList.setDefault(localeList);
-    configuration.setLocales(localeList);
-
-    final Context updatedContext = newBase.createConfigurationContext(configuration);
-    super.attachBaseContext(new ContextWrapper(updatedContext));
-  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -166,6 +147,7 @@ public class MainActivity extends AppCompatActivity
     log("onPanLocationChange: " + location);
     if (null == location) return;
     if (!peg.getPosition().equals(location.position)) peg.setPosition(location.position);
+    map.moveCamera(CameraUpdateFactory.newLatLng(location.position));
   }
 
   /**
