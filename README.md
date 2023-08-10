@@ -1,4 +1,4 @@
-# google-map-with-panorama-sample
+# Android Google Map with Street View sample
 Sample android app. How to use custom pair of Google Map and StreetView together.
 
 The app require that you add your own Google Maps API key:
