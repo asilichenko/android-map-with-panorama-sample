@@ -1,10 +1,16 @@
 # Android Google Map with Street View sample
+
 The sample Android app demonstrates how to use a custom combination of Google Maps and StreetView.
 
 <div style="align: center; display: flex;">
   <img src="/img/screenshot.jpg" style="height: 300px;"/>
   <img src="/img/interactions.jpg" style="height: 300px;"/>
 </div>
+
+## Sources
+
+* All code is concentrated here: [MainActivity.java](app/src/main/java/ua/in/asilichenko/mapwithpansample/MainActivity.java)
+* Layout: [activity_main.xml](app/src/main/res/layout/activity_main.xml)
 
 ## Maps API key
 The app require that you add your own Google Maps API key:
